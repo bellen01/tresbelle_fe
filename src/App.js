@@ -8,6 +8,11 @@ import Footer from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Posters from './components/Posters';
 import Login from './components/Login';
+import Register from './components/Register';
+import Cart from './components/Cart';
+import BestSellers from './components/BestSellers';
+import Favorites from './components/Favorites';
+import News from './components/News';
 
 
 function App() {
@@ -18,7 +23,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/posters" element={<Posters />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/register" element={< />} /> */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/bestsellers" element={<BestSellers />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
       <Footer />
     </div>

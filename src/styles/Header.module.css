@@ -1,4 +1,40 @@
 .header {
     height: auto;
-    width: auto;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    background-color: black;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header a:active {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 33.33%;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    width: 33.33%;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.login {
+    display: flex;
+    width: 33.33%;
+    justify-content: end;
+    gap: 10px;
+    color: white;
 }
