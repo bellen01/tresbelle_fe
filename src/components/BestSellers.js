@@ -2,7 +2,7 @@ import React from 'react'
 
 function BestSellers() {
     return (
-        <div>BestSellers</div>
+        <div>Topplistan</div>
     )
 }
 
