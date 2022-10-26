@@ -5,7 +5,8 @@ import { Link, Route, Routes } from 'react-router-dom';
 function Header() {
     return (
         <header className={styles.header} >
-            <div className={styles.logo}>TRES BELLE</div>
+            <div className={styles.logo}><Link to="/">Tres Belle</Link></div>
+            {/* <div className={styles.logo}><Link to="/">TRES BELLE</Link></div> */}
             <nav className={styles.navbar}>
                 <div><Link to="/">Hem</Link></div>
                 <div><Link to="/posters">Posters</Link></div>

@@ -1,0 +1,53 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.form {
+    /* width: 33.33%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h2 {
+    font-family: montserrat;
+    font-weight: 300;
+}
+
+input {
+    border: none;
+    /* border-bottom: 1px solid black; */
+}
+
+input:focus {
+    outline: none;
+}
+
+.input {
+    border-bottom: 1px solid black;
+}
+
+.submitButton {
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+    /* font-family: montserrat; */
+    /* border-radius: 10px; */
+}
+
+.registerLink a {
+    color: black;
+    font-family: montserrat;
+    text-decoration: none;
+}
+
+.registerLink a:hover {
+    text-decoration: underline;
+}
