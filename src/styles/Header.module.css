@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Handlee&family=Marcellus+SC&family=Montserrat:wght@300&family=Open+Sans:wght@300;400;500&display=swap');
+
+
+.header {
+    height: auto;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    background-color: black;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header a:active {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 33.33%;
+    color: white;
+    font-family: 'marcellus SC', serif;
+    font-size: 30px;
+}
+
+.navbar {
+    /* font-family: montserrat;
+    font-weight: 300; */
+    display: flex;
+    width: 33.33%;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    /* font-size: 15px; */
+}
+
+.login {
+    display: flex;
+    width: 33.33%;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
