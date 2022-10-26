@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import styles from '../styles/Login.module.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
     const [loginEmail, setLoginEmail] = useState('');
@@ -42,6 +43,7 @@ function Login() {
                 </div>
                 <button type="submit" className={styles.submitButton}>Logga in mig</button>
             </form>
+            <p className={styles.registerLink}><Link to="/register">Eller registrera dig här!</Link></p>
         </div>
     )
 }

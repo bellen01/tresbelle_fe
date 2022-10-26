@@ -41,3 +41,13 @@ input:focus {
     /* font-family: montserrat; */
     /* border-radius: 10px; */
 }
+
+.registerLink a {
+    color: black;
+    font-family: montserrat;
+    text-decoration: none;
+}
+
+.registerLink a:hover {
+    text-decoration: underline;
+}
