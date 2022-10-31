@@ -6,27 +6,19 @@
 }
 
 .form {
+    width: 30%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-h2 {
-    font-family: montserrat;
-    font-weight: 300;
-}
-
-input {
-    border: none;
-    /* border-bottom: 1px solid black; */
-}
-
-input:focus {
-    outline: none;
+    align-items: left;
+    gap: 20px 20px;
 }
 
 .input {
+    border-bottom: 1px solid black;
+}
+
+.email {
+    width: 100%;
     border-bottom: 1px solid black;
 }
 
@@ -37,16 +29,7 @@ input:focus {
     padding: 10px;
     width: 100%;
     text-decoration: none;
+    margin: 10px 0;
     /* font-family: montserrat; */
     /* border-radius: 10px; */
-}
-
-.registerLink a {
-    color: black;
-    font-family: montserrat;
-    text-decoration: none;
-}
-
-.registerLink a:hover {
-    text-decoration: underline;
 }
