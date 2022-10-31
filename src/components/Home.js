@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Home() {
+
     return (
-        <div>Hem</div>
+        <div>Home
+        </div>
     )
 }
 

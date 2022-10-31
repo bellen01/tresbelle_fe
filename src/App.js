@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import logo from './logo.svg';
 // import { Counter } from './features/counter/Counter';
 import './App.css'
@@ -13,9 +13,11 @@ import Cart from './components/Cart';
 import BestSellers from './components/BestSellers';
 import Favorites from './components/Favorites';
 import News from './components/News';
+import ToDo from './testNilla/ToDo';
 
 
 function App() {
+
   return (
     <div className="App">
       <Header />
@@ -28,11 +30,13 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/bestsellers" element={<BestSellers />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/todo" element={<ToDo />} />
       </Routes>
       <Footer />
     </div>
   )
 }
+
 
 // function App() {
 //   return (
