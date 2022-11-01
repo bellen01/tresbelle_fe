@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from '..//styles/Login.module.css';
 
+/* Tar in handleSubmit som props i parantesen enligt nedan*/
 function Form(props) {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
@@ -20,10 +21,12 @@ function Form(props) {
     //     return addingNote;
     // }
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     props.handleSubmit(note);
-    //   }
+    const onHandleSubmit = (e) => {
+        setTitle('');
+        setBody('');
+        e.preventDefault();
+        props.handleSubmit(note);
+    }
 
     // const handleSubmit = (e) => {
     //     e.preventDefault();
@@ -35,17 +38,16 @@ function Form(props) {
     //     return addingNote;
     // }
 
-    // props.setAllNotes(...allNotes, addingNote);
-
+    // props.setAllNotes(...allNotes, addingNote)
     return (
         <div className={styles.formContainer}>
-            {/* <form onSubmit={handleSubmit} */}
-            <form onSubmit={(e) => {
-                setTitle('')
-                setBody('')
-                e.preventDefault()
-                props.handleSubmit(note)
-            }}
+            <form onSubmit={onHandleSubmit} /* kallar på onHandleSubmit som kallar på handleSubmit från ToDo */
+                /* <form onSubmit={(e) => {
+                    setTitle('')
+                    setBody('')
+                    e.preventDefault()
+                    props.handleSubmit(note)
+                }} */
                 className={styles.form}>
                 <div className={styles.input}>
                     <input
