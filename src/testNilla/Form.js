@@ -1,21 +1,14 @@
 import React, { useState } from 'react'
 import styles from '..//styles/Login.module.css';
 
-/* Tar in handleSubmit som props i parantesen enligt nedan*/
-function Form(handleSubmit) {
+/* Viktigt att ta in handleSubmit som prop i parantesen enligt nedan*/
+function Form(props) {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
 
     const note = {
         title: title,
         body: body
-    }
-
-    const onSend = (e) => {
-        setTitle('');
-        setBody('');
-        e.preventDefault();
-        handleSubmit(note);
     }
 
     // const handleSubmit = (e) => {
@@ -28,17 +21,35 @@ function Form(handleSubmit) {
     //     return addingNote;
     // }
 
-    // props.setAllNotes(...allNotes, addingNote)
+    // const handleSubmit = (e) => {
+    //     setTitle('');
+    //     setBody('');
+    //     e.preventDefault();
+    //     props.handleSubmit(note);
+    //   }
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log('note', note)
+    //     console.log('props', props);
+    //     const addingNote = [...props.allNotes, note]
+    //     console.log('allNotes', props.allNotes)
+    //     console.log('addingNote', addingNote)
+    //     return addingNote;
+    // }
+
+    // props.setAllNotes(...allNotes, addingNote);
+
     return (
         <div className={styles.formContainer}>
-            <form onSubmit={onSend} /* kallar på onSend-funktionen ovan som i sin tur kallar på handleSubmit från ToDo */
-                /* Nedan är ett annat sätt att göra samma sak */
-                /* <form onSubmit={(e) => {
-                    setTitle('')
-                    setBody('')
-                    e.preventDefault()
-                    handleSubmit(note)
-                }} */
+            {/* <form onSubmit={handleSubmit} */}
+            <form onSubmit={(e) => {
+                console.log(note);
+                setTitle('')
+                setBody('')
+                e.preventDefault()
+                props.handleSubmit(note)
+            }}
                 className={styles.form}>
                 <div className={styles.input}>
                     <input
