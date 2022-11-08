@@ -15,7 +15,8 @@ function Header() {
             </nav>
             <nav className={styles.login}>
                 <div><i className="bi bi-search"></i></div>
-                <div><Link to="/favorites"><i className="bi bi-suit-heart-fill"></i></Link></div>
+                <div><Link to="/favorites"><i className="bi bi-suit-heart"></i></Link></div>
+                {/* <div><Link to="/favorites"><i className="bi bi-suit-heart-fill"></i></Link></div> */}
                 <div><Link to="/cart"><i className="bi bi-bag-fill"></i></Link></div>
                 <div><Link to="/login"><i className="bi bi-person-circle"></i></Link></div>
             </nav>

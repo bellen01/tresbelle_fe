@@ -1,0 +1,56 @@
+.footer {
+    height: auto;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    background-color: black;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    width: 33.33%;
+    color: white;
+    font-family: 'marcellus SC', serif;
+    font-size: 30px;
+    /* text-align: center; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.contactContainer {
+    display: flex;
+    width: 33.33%;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.socialContainer {
+    display: flex;
+    width: 33.33%;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
