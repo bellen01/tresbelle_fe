@@ -13,6 +13,7 @@ import Cart from './components/Cart';
 import BestSellers from './components/BestSellers';
 import Favorites from './components/Favorites';
 import News from './components/News';
+import AddPoster from './components/AddPoster';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/bestsellers" element={<BestSellers />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/addposter" element={<AddPoster />} />
       </Routes>
       <Footer />
     </div>
