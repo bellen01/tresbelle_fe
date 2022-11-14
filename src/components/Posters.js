@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from 'react'
-// import { collection, query, orderBy, onSnapshot, getDocs } from 'firebase/firestore';
-// import { db } from '../config';
 
 function Posters() {
-    // const colRef = collection(db, 'posters');
-    // const [posters, setPosters] = useState([]);
+    const [posters, setPosters] = useState([]);
 
+    const getProducts = async () => {
+        const response = await fetch('http://localhost:3005');
+        const data = await response.json();
+        console.log(data);
+        return setPosters(data);
+    }
 
-
-    // useEffect(() => {
-    //     const q = query(colRef, orderBy('created', 'desc'))
-    //     onSnapshot(q, (querySnapshot) => {
-    //         setPosters(querySnapshot.docs.map(doc => ({
-    //             id: doc.id,
-    //             data: doc.data()
-    //         })))
-    //     })
-    //     console.log(posters);
-    // }, [])
+    useEffect(() => {
+        getProducts();
+    }, [])
 
     return (
-        <div>
+        <main>
+            <h2>Alla posters</h2>
             <div>
-                {/* {posters.map((poster) => (
-                    <div key={poster.id}></div>
-                ))} */}
+                {posters.map((poster) => (
+                    <div key={poster.id}>
+                        <p>{poster.data.title}</p>
+                        <p>Från 54 kr</p>
+                    </div>
+                ))}
             </div>
-        </div>
+
+        </main>
     )
 }
 
