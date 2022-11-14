@@ -5,6 +5,11 @@
     padding: 40px 0;
 }
 
+h1 {
+    font-family: montserrat;
+    font-weight: 300;
+}
+
 .form {
     width: 30%;
     display: flex;
@@ -37,5 +42,29 @@
 textarea {
     resize: none;
     border: 1px solid black;
+    width: 100%;
+    font-family: helvetica;
+}
 
+select {
+    width: 100%;
+    color: grey;
+    background-color: transparent;
+}
+
+select:focus {
+    outline: none;
+}
+
+
+.addSizeAndPriceButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addSizeAndPriceButton {
+    text-align: center;
+    padding: 5px;
 }

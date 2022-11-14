@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles/AddPoster.module.css';
+import Select from 'react-select';
 
 function AddPoster() {
     const [size1, setSize1] = useState('');
@@ -40,7 +41,13 @@ function AddPoster() {
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
-        // setPoster(newPoster);
+        setPoster({
+            title: '',
+            description: '',
+            sizeAndPrice: []
+        })
+        setSize1('');
+        setPrice1('');
         console.log(poster);
         try {
             const response = await fetch('http://localhost:3005/addposter', {
@@ -125,29 +132,29 @@ function AddPoster() {
                         <p key={sp.size}>Valt: {sp.size} & {sp.price}</p>
                     ))}
                 </div>
-                <div>
-                    <label htmlFor="size1">Välj storlek</label>
+                <div className={styles.customSelect}>
                     <select
                         onChange={(e) => setSize1(e.target.value)}
                         value={size1}
                     >
-                        <option defaultValue="">välj</option>
+                        <option defaultValue="">Välj storlek</option>
                         <option value="13x18">13x18</option>
                         <option value="21x30">21x30</option>
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="price1">Välj pris</label>
                     <select
                         onChange={(e) => setPrice1(e.target.value)}
                         value={price1}
                     >
-                        <option defaultValue="">välj</option>
+                        <option defaultValue="">Välj pris</option>
                         <option value="54">54</option>
                         <option value="89">89</option>
                     </select>
+                </div>
+                <div className={styles.addSizeAndPriceButtonContainer}>
                     <div>
-                        <input type="button" onClick={onClickHandler} value="Lägg till storlek" />
+                        <input className={styles.addSizeAndPriceButton} type="button" onClick={onClickHandler} value="Lägg till storlek" />
                     </div>
                 </div>
                 <button type="submit" className={styles.submitButton}>Lägg till produkt</button>
