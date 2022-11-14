@@ -4,6 +4,7 @@ import styles from '../styles/AddPoster.module.css';
 function AddPoster() {
     const [size1, setSize1] = useState('');
     const [price1, setPrice1] = useState('');
+    const [successOrFailureMessage, setSucessOrFailureMessage] = useState('');
 
 
 
@@ -42,17 +43,38 @@ function AddPoster() {
         // setPoster(newPoster);
         console.log(poster);
         try {
-            const response = await fetch('http://localhost:3005/admin/addposter', {
+            const response = await fetch('http://localhost:3005/addposter', {
                 method: 'POST',
                 body: JSON.stringify(poster),
                 headers: {
                     'Content-Type': 'application/json'
                 }
             });
+
+            if (!response.ok) {
+                if (response.status === 412) {
+                    throw new Error('Vänligen fyll i titel');
+                } else if (response.status === 417) {
+                    throw new Error('Vänligen fyll i beskrivning av produkten');
+                } else if (response.status === 406) {
+                    throw new Error('Vänligen fyll i storlek och pris');
+                } else {
+                    throw new Error('Något gick fel, försök igen senare');
+                }
+            }
+
             const data = await response.json();
             console.log(data);
-        } catch (error) {
 
+            if (response.ok) {
+                if (response.status === 200) {
+                    setSucessOrFailureMessage(`Produkten har lagts till, med id ${data.id}`);
+                }
+            }
+
+        } catch (error) {
+            console.log('något gick fel', error);
+            setSucessOrFailureMessage(error.message);
         }
     }
 
@@ -129,6 +151,9 @@ function AddPoster() {
                     </div>
                 </div>
                 <button type="submit" className={styles.submitButton}>Lägg till produkt</button>
+                <div>
+                    {successOrFailureMessage}
+                </div>
             </form>
         </div>
     )
