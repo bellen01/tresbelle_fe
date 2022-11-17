@@ -78,6 +78,7 @@ function Login() {
                 </div>
                 <button type="submit" className={styles.submitButton}>Logga in mig</button>
             </form>
+            <div>{loginSuccessOrFailureMessage}</div>
             <p className={styles.registerLink}><Link to="/register">Eller registrera dig här!</Link></p>
         </div>
     )
