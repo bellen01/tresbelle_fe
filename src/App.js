@@ -13,6 +13,8 @@ import Cart from './components/Cart';
 import BestSellers from './components/BestSellers';
 import Favorites from './components/Favorites';
 import News from './components/News';
+import ProfilePage from './components/ProfilePage';
+import PrivateRoutes from './app/Routes/PrivateRoutes';
 
 
 function App() {
@@ -28,6 +30,9 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/bestsellers" element={<BestSellers />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/profilepage/:id" element={<ProfilePage />} />
+        </Route>
       </Routes>
       <Footer />
     </div>

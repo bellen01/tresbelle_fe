@@ -1,15 +1,17 @@
 import React from 'react'
 import { useState } from 'react'
 import styles from '../styles/Login.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
 
 function Login() {
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
     const [loginSuccessOrFailureMessage, setLoginSuccessOrFailureMessage] = useState('');
-    // const [loginDetails, setLoginDetails] = useState({});
+    //jwt stuff
+    // let navigate = useNavigate();
+    // const location = useLocation()
 
-
+    // const [loginStatus, setLoginStatus] = useState(false);
 
     const checkIfUserExist = async (loginData) => {
         try {
@@ -31,9 +33,17 @@ function Login() {
 
             const data = await response.json();
             const loggedInUserName = data.firstName;
+            // setLoginStatus(true); //jwt stuff
+            setLoginSuccessOrFailureMessage('Du är inloggad!')
+            //jwt stuff
+            // if (location.state?.from) {
+            //     // navigate('/profilepage')
+            //     navigate(location.state.from)
+            // }
 
         } catch (error) {
             console.log('Login failed', error);
+            // setLoginStatus(false); //jwt stuff
             setLoginSuccessOrFailureMessage(error.message);
         }
     }
@@ -47,6 +57,7 @@ function Login() {
         }
         checkIfUserExist(loginData);
     }
+
 
     return (
         <div className={styles.formContainer}>
@@ -79,6 +90,7 @@ function Login() {
                 <button type="submit" className={styles.submitButton}>Logga in mig</button>
             </form>
             <div>{loginSuccessOrFailureMessage}</div>
+            {/* <div>{loginStatus}</div> */}
             <p className={styles.registerLink}><Link to="/register">Eller registrera dig här!</Link></p>
         </div>
     )
