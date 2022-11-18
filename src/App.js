@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
-import Posters from './components/Posters';
+import Products from './components/Products';
 import Login from './components/Login';
 import Register from './components/Register';
 import Cart from './components/Cart';
@@ -21,7 +21,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/posters" element={<Posters />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/news" element={<News />} />

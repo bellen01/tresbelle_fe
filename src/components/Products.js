@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function Posters() {
+function Products() {
     const [posters, setPosters] = useState([]);
 
     const getProducts = async () => {
@@ -30,4 +30,4 @@ function Posters() {
     )
 }
 
-export default Posters
+export default Products
