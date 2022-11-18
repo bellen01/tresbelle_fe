@@ -1,0 +1,11 @@
+.navbarContainer {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
