@@ -9,7 +9,7 @@ function Header() {
             {/* <div className={styles.logo}><Link to="/">TRES BELLE</Link></div> */}
             <nav className={styles.navbar}>
                 <div><Link to="/">Hem</Link></div>
-                <div><Link to="/posters">Posters</Link></div>
+                <div><Link to="/products">Posters</Link></div>
                 <div><Link to="/news">Nyheter</Link></div>
                 <div><Link to="/bestsellers">Topplistan</Link></div>
             </nav>

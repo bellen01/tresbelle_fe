@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NavbarFilter from './NavbarFilter'
 import styles from '../styles/Posters.module.css';
+import { Link } from 'react-router-dom';
 
 function Products() {
     const [posters, setPosters] = useState([]);
@@ -25,8 +26,10 @@ function Products() {
                 <h2>Alla posters</h2>
                 {posters.map((poster) => (
                     <div key={poster.id}>
-                        <p>{poster.data.title}</p>
-                        <p>Från 54 kr</p>
+                        <Link to={`/products/${poster.id}`}>
+                            <p>{poster.data.title}</p>
+                            <p>Från 54 kr</p>
+                        </Link>
                     </div>
                 ))}
             </div>
